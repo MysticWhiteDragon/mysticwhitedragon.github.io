@@ -1,0 +1,546 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="print.css">
+<link rel="stylesheet" type="text/css" href="menu.css">
+<style>
+.btn {
+	border: 2px solid gray;
+	color: gray;
+	background-color: white;
+	padding: 8px 20px;
+	border-radius: 8px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+
+.fadeOut {
+	animation: fadeOut 1s;
+	animation-fill-mode: both;
+}
+
+.fadeIn {
+	animation: fadeIn .5s;
+	animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.trpts {
+	font-size: 6vh;
+	font-family: "Impact";
+	color: white;
+	padding: 5%;
+}
+
+.trBox {
+	position: absolute;
+	width: 10.5%;
+	height: 10.25%;
+	background-color: blue;
+	text-align: center;
+	float: left;
+}
+
+.trQABox {
+	position: absolute;
+	top: 18.3%;
+	width: 64.5%;
+	height: 67.6%;
+	background-color: blue;
+	display: none;
+//	display: block;
+}
+
+.trQBox {
+	position: relative;
+	display: table;
+	margin: auto;
+	height: 45%;
+	font-size: 6vh;
+	font-family: "Arial";
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.trABox {
+	position: relative;
+	display: table;
+	margin: auto;
+	height: 45%;
+	font-size: 6vh;
+	font-family: "Arial";
+	color: lightgray;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.trP {
+	margin: auto;
+//	display: table-cell;
+	display: block;
+	width: 100%;
+	height: 45%;
+	padding-top: 5%;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+//	font-size: 50%;
+}
+
+.trA { left: 24.9%;  }
+.trB { left: 35.7%;  }
+.trC { left: 46.5%;  }
+.trD { left: 57.3%;  }
+.trE { left: 68.1%;  }
+.trF { left: 78.85%; }
+
+.tr1 { top: 32.3%;  }
+.tr2 { top: 43.1%; }
+.tr3 { top: 53.9%; }
+.tr4 { top: 64.75%; }
+.tr5 { top: 75.55%; }
+
+.upload-btn-wrapper {
+	posiion: relative;
+	overflow: hidden;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.btn {
+	border: 2px solid gray;
+	color: gray;
+	background-color: white;
+	padding: 8px 20px;
+	border-radius: 8px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+	font-size: 100px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+
+</style>
+</head>
+<body>
+<input id="hamburger" class="hamburger" type="checkbox" />
+<label for="hamburger" class="hamburger"><i></i><text><close>close</close><open>menu</open></text></label>
+<script language="JavaScript" src="menu.js"></script>
+<div style="position: absolute; left: 58px; top: 0; bottom: 0px; right: 0px;">
+	<table style="width: 100%; height: 100%;">
+		<tr>
+			<td style="width: 50%; height: 60%; vertical-align: top;">
+				Game Window<br><br>
+				<div id="triviaGame" style="position: relative; top: 0; bototm: 0; left: 0; right: 0; z-index: -1;">
+					<img src="triviabg.png" style="position: relative; top: 0px; left: 0px; width: 100%; height: auto;">
+
+
+
+
+		<div id="TrCategoryA" style="position: absolute; top: 18.3%; left: 24.9%; width: 10.5%; height: 12%; background-color: blue;"></div>
+		<div id="TrCategoryB" style="position: absolute; top: 18.3%; left: 35.7%; width: 10.5%; height: 12%; background-color: blue;"></div>
+		<div id="TrCategoryC" style="position: absolute; top: 18.3%; left: 46.5%; width: 10.5%; height: 12%; background-color: blue;"></div>
+		<div id="TrCategoryD" style="position: absolute; top: 18.3%; left: 57.3%; width: 10.5%; height: 12%; background-color: blue;"></div>
+		<div id="TrCategoryE" style="position: absolute; top: 18.3%; left: 68.1%; width: 10.5%; height: 12%; background-color: blue;"></div>
+		<div id="TrCategoryF" style="position: absolute; top: 18.3%; left: 78.85%; width: 10.5%; height: 12%; background-color: blue;"></div>
+
+		<div id="TrA10" class="trBox trA tr1"><div class="trpts" id="A10">10</div></div>
+		<div id="TrB10" class="trBox trB tr1"><div class="trpts" id="B10">10</div></div>
+		<div id="TrC10" class="trBox trC tr1"><div class="trpts" id="C10">10</div></div>
+		<div id="TrD10" class="trBox trD tr1"><div class="trpts" id="D10">10</div></div>
+		<div id="TrE10" class="trBox trE tr1"><div class="trpts" id="E10">10</div></div>
+		<div id="TrF10" class="trBox trF tr1"><div class="trpts" id="F10">10</div></div>
+		<div style="clear: both;"></div>
+
+		<div id="TrA20" class="trBox trA tr2"><div class="trpts" id="A20">20</div></div>
+		<div id="TrB20" class="trBox trB tr2"><div class="trpts" id="B20">20</div></div>
+		<div id="TrC20" class="trBox trC tr2"><div class="trpts" id="C20">20</div></div>
+		<div id="TrD20" class="trBox trD tr2"><div class="trpts" id="D20">20</div></div>
+		<div id="TrE20" class="trBox trE tr2"><div class="trpts" id="E20">20</div></div>
+		<div id="TrF20" class="trBox trF tr2"><div class="trpts" id="F20">20</div></div>
+		<div style="clear: both;"></div>
+
+		<div id="TrA30" class="trBox trA tr3"><div class="trpts" id="A30">30</div></div>
+		<div id="TrB30" class="trBox trB tr3"><div class="trpts" id="B30">30</div></div>
+		<div id="TrC30" class="trBox trC tr3"><div class="trpts" id="C30">30</div></div>
+		<div id="TrD30" class="trBox trD tr3"><div class="trpts" id="D30">30</div></div>
+		<div id="TrE30" class="trBox trE tr3"><div class="trpts" id="E30">30</div></div>
+		<div id="TrF30" class="trBox trF tr3"><div class="trpts" id="F30">30</div></div>
+		<div style="clear: both;"></div>
+
+		<div id="TrA40" class="trBox trA tr4"><div class="trpts" id="A40">40</div></div>
+		<div id="TrB40" class="trBox trB tr4"><div class="trpts" id="B40">40</div></div>
+		<div id="TrC40" class="trBox trC tr4"><div class="trpts" id="C40">40</div></div>
+		<div id="TrD40" class="trBox trD tr4"><div class="trpts" id="D40">40</div></div>
+		<div id="TrE40" class="trBox trE tr4"><div class="trpts" id="E40">40</div></div>
+		<div id="TrF40" class="trBox trF tr4"><div class="trpts" id="F40">40</div></div>
+		<div style="clear: both;"></div>
+
+		<div id="TrA50" class="trBox trA tr5"><div class="trpts" id="A50">50</div></div>
+		<div id="TrB50" class="trBox trB tr5"><div class="trpts" id="B50">50</div></div>
+		<div id="TrC50" class="trBox trC tr5"><div class="trpts" id="C50">50</div></div>
+		<div id="TrD50" class="trBox trD tr5"><div class="trpts" id="D50">50</div></div>
+		<div id="TrE50" class="trBox trE tr5"><div class="trpts" id="E50">50</div></div>
+		<div id="TrF50" class="trBox trF tr5"><div class="trpts" id="F50">50</div></div>
+		<div style="clear: both;"></div>
+
+<!--
+		<div class="trQABox trA" id="TRQABox">
+			<div class="trQBox"><div class="trP" id="SQs">Sample Question</div></div><br>
+			<div class="trABox"><div class="trP" id="SAs">Sample Question</div></div>
+		</div>
+-->
+		<div class="trQABox trA" id="TRQABox">
+			<div class="trP" id="SQs">Sample Question</div>
+			<div class="trP" id="SAs">Sample Answer</div>
+		</div>
+
+
+
+
+
+
+		</div>
+			</td>
+			<td style="width: 50%; height: 56%; vertical-align: top;">
+				Cell 2
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="width: 50%; height: 100%; vertical-align: top;">
+				<button class="btn" onclick="openFullScreen('triviaGame');">Play Game</button>
+			</td>
+		</tr>
+	</table>
+</div>
+<script>
+var button = new Array(2);
+var links = [ "TrA10", "TrA20", "TrA30", "TrA40", "TrA50", "TrB10", "TrB20", "TrB30", "TrB40", "TrB50", "TrC10", "TrC20", "TrC30", "TrC40", "TrC50", "TrD10", "TrD20", "TrD30", "TrD40", "TrD50", "TrE10", "TrE20", "TrE30", "TrE40", "TrE50", "TrF10", "TrF20", "TrF30", "TrF40", "TrF50" ];
+
+for (let i = 0; i <= links.length - 1; i++)
+{
+	button[i] = document.getElementById(links[i]);
+	button[i].addEventListener('click', function()
+	{
+		document.getElementById("TRQABox").classList.add('fadeIn');
+		document.getElementById("TRQABox").style.display = "block";
+		document.getElementById("trABox").style.display = "none";
+
+		setTimeout(function()
+		{
+			button[i].classList.add('fadeOut');
+			button[i].style.display = "none";
+		}, 2000);
+
+
+	}, false);
+}
+
+/*
+function fadeIn(el)
+{
+	var element = getElementById(el);
+	el.classList.add('show');
+	el.classList.remove('hide');
+}
+*/
+ 
+function saveTriviaAsFile()
+{
+    var textToSave	= document.getElementById("TrCatA").value + "|"
+					+ document.getElementById("TrCatB").value + "|"
+					+ document.getElementById("TrCatC").value + "|"
+					+ document.getElementById("TrCatD").value + "|"
+					+ document.getElementById("TrCatE").value + "|"
+					+ document.getElementById("TrCatF").value + "|"
+					+ document.getElementById("A1Q").value + "|"
+					+ document.getElementById("A1A").value + "|"
+					+ document.getElementById("A2Q").value + "|"
+					+ document.getElementById("A2A").value + "|"
+					+ document.getElementById("A3Q").value + "|"
+					+ document.getElementById("A3A").value + "|"
+					+ document.getElementById("A4Q").value + "|"
+					+ document.getElementById("A4A").value + "|"
+					+ document.getElementById("A5Q").value + "|"
+					+ document.getElementById("A5A").value + "|"
+					+ document.getElementById("B1Q").value + "|"
+					+ document.getElementById("B1A").value + "|"
+					+ document.getElementById("B2Q").value + "|"
+					+ document.getElementById("B2A").value + "|"
+					+ document.getElementById("B3Q").value + "|"
+					+ document.getElementById("B3A").value + "|"
+					+ document.getElementById("B4Q").value + "|"
+					+ document.getElementById("B4A").value + "|"
+					+ document.getElementById("B5Q").value + "|"
+					+ document.getElementById("B5A").value + "|"
+					+ document.getElementById("C1Q").value + "|"
+					+ document.getElementById("C1A").value + "|"
+					+ document.getElementById("C2Q").value + "|"
+					+ document.getElementById("C2A").value + "|"
+					+ document.getElementById("C3Q").value + "|"
+					+ document.getElementById("C3A").value + "|"
+					+ document.getElementById("C4Q").value + "|"
+					+ document.getElementById("C4A").value + "|"
+					+ document.getElementById("C5Q").value + "|"
+					+ document.getElementById("C5A").value + "|"
+					+ document.getElementById("D1Q").value + "|"
+					+ document.getElementById("D1A").value + "|"
+					+ document.getElementById("D2Q").value + "|"
+					+ document.getElementById("D2A").value + "|"
+					+ document.getElementById("D3Q").value + "|"
+					+ document.getElementById("D3A").value + "|"
+					+ document.getElementById("D4Q").value + "|"
+					+ document.getElementById("D4A").value + "|"
+					+ document.getElementById("D5Q").value + "|"
+					+ document.getElementById("D5A").value + "|"
+					+ document.getElementById("E1Q").value + "|"
+					+ document.getElementById("E1A").value + "|"
+					+ document.getElementById("E2Q").value + "|"
+					+ document.getElementById("E2A").value + "|"
+					+ document.getElementById("E3Q").value + "|"
+					+ document.getElementById("E3A").value + "|"
+					+ document.getElementById("E4Q").value + "|"
+					+ document.getElementById("E4A").value + "|"
+					+ document.getElementById("E5Q").value + "|"
+					+ document.getElementById("E5A").value + "|"
+					+ document.getElementById("F1Q").value + "|"
+					+ document.getElementById("F1A").value + "|"
+					+ document.getElementById("F2Q").value + "|"
+					+ document.getElementById("F2A").value + "|"
+					+ document.getElementById("F3Q").value + "|"
+					+ document.getElementById("F3A").value + "|"
+					+ document.getElementById("F4Q").value + "|"
+					+ document.getElementById("F4A").value + "|"
+					+ document.getElementById("F5Q").value + "|"
+					+ document.getElementById("F5A").value;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+//    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+ 
+    var downloadLink = document.createElement("a");
+//    downloadLink.download = fileNameToSaveAs;
+    downloadLink.download = "";
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+ 
+    downloadLink.click();
+}
+ 
+function destroyClickedElement(event)
+{
+    document.body.removeChild(event.target);
+}
+ 
+function loadTriviaAsText()
+{
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
+ 
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+        var textFromFileLoaded = fileLoadedEvent.target.result;
+		var textArray = textFromFileLoaded.split("|");
+		
+		if(textArray[0]  != null) { document.getElementById("TrCatA").value = textArray[0] } else { document.getElementById("TrCatA").value = ""; }
+		if(textArray[1]  != null) { document.getElementById("TrCatB").value = textArray[1] } else { document.getElementById("TrCatB").value = ""; }
+		if(textArray[2]  != null) { document.getElementById("TrCatC").value = textArray[2] } else { document.getElementById("TrCatC").value = ""; }
+		if(textArray[3]  != null) { document.getElementById("TrCatD").value = textArray[3] } else { document.getElementById("TrCatD").value = ""; }
+		if(textArray[4]  != null) { document.getElementById("TrCatE").value = textArray[4] } else { document.getElementById("TrCatE").value = ""; }
+		if(textArray[5]  != null) { document.getElementById("TrCatF").value = textArray[5] } else { document.getElementById("TrCatF").value = ""; }
+		if(textArray[6]  != null) { document.getElementById("A1Q").value = textArray[6]; }   else { document.getElementById("A1Q").value = ""; }
+		if(textArray[7]  != null) { document.getElementById("A1A").value = textArray[7]; }   else { document.getElementById("A1A").value = ""; }
+		if(textArray[8]  != null) { document.getElementById("A2Q").value = textArray[8]; }   else { document.getElementById("A2Q").value = ""; }
+		if(textArray[9]  != null) { document.getElementById("A2A").value = textArray[9]; }   else { document.getElementById("A2A").value = ""; }
+		if(textArray[10] != null) { document.getElementById("A3Q").value = textArray[10]; }  else { document.getElementById("A3Q").value = ""; }
+		if(textArray[11] != null) { document.getElementById("A3A").value = textArray[11]; }  else { document.getElementById("A3A").value = ""; }
+		if(textArray[12] != null) { document.getElementById("A4Q").value = textArray[12]; }  else { document.getElementById("A4Q").value = ""; }
+		if(textArray[13] != null) { document.getElementById("A4A").value = textArray[13]; }  else { document.getElementById("A4A").value = ""; }
+		if(textArray[14] != null) { document.getElementById("A5Q").value = textArray[14]; }  else { document.getElementById("A5Q").value = ""; }
+		if(textArray[15] != null) { document.getElementById("A5A").value = textArray[15]; }  else { document.getElementById("A5A").value = ""; }
+		if(textArray[16] != null) { document.getElementById("B1Q").value = textArray[16]; }  else { document.getElementById("B1Q").value = ""; }
+		if(textArray[17] != null) { document.getElementById("B1A").value = textArray[17]; }  else { document.getElementById("B1A").value = ""; }
+		if(textArray[18] != null) { document.getElementById("B2Q").value = textArray[18]; }  else { document.getElementById("B2Q").value = ""; }
+		if(textArray[19] != null) { document.getElementById("B2A").value = textArray[19]; }  else { document.getElementById("B2A").value = ""; }
+		if(textArray[20] != null) { document.getElementById("B3Q").value = textArray[20]; }  else { document.getElementById("B3Q").value = ""; }
+		if(textArray[21] != null) { document.getElementById("B3A").value = textArray[21]; }  else { document.getElementById("B3A").value = ""; }
+		if(textArray[22] != null) { document.getElementById("B4Q").value = textArray[22]; }  else { document.getElementById("B4Q").value = ""; }
+		if(textArray[23] != null) { document.getElementById("B4A").value = textArray[23]; }  else { document.getElementById("B4A").value = ""; }
+		if(textArray[24] != null) { document.getElementById("B5Q").value = textArray[24]; }  else { document.getElementById("B5Q").value = ""; }
+		if(textArray[25] != null) { document.getElementById("B5A").value = textArray[25]; }  else { document.getElementById("B5A").value = ""; }
+		if(textArray[26] != null) { document.getElementById("C1Q").value = textArray[26]; }  else { document.getElementById("C1Q").value = ""; }
+		if(textArray[27] != null) { document.getElementById("C1A").value = textArray[27]; }  else { document.getElementById("C1A").value = ""; }
+		if(textArray[28] != null) { document.getElementById("C2Q").value = textArray[28]; }  else { document.getElementById("C2Q").value = ""; }
+		if(textArray[29] != null) { document.getElementById("C2A").value = textArray[29]; }  else { document.getElementById("C2A").value = ""; }
+		if(textArray[30] != null) { document.getElementById("C3Q").value = textArray[30]; }  else { document.getElementById("C3Q").value = ""; }
+		if(textArray[31] != null) { document.getElementById("C3A").value = textArray[31]; }  else { document.getElementById("C3A").value = ""; }
+		if(textArray[32] != null) { document.getElementById("C4Q").value = textArray[32]; }  else { document.getElementById("C4Q").value = ""; }
+		if(textArray[33] != null) { document.getElementById("C4A").value = textArray[33]; }  else { document.getElementById("C4A").value = ""; }
+		if(textArray[34] != null) { document.getElementById("C5Q").value = textArray[34]; }  else { document.getElementById("C5Q").value = ""; }
+		if(textArray[35] != null) { document.getElementById("C5A").value = textArray[35]; }  else { document.getElementById("C5A").value = ""; }
+		if(textArray[36] != null) { document.getElementById("D1Q").value = textArray[36]; }  else { document.getElementById("D1Q").value = ""; }
+		if(textArray[37] != null) { document.getElementById("D1A").value = textArray[37]; }  else { document.getElementById("D1A").value = ""; }
+		if(textArray[38] != null) { document.getElementById("D2Q").value = textArray[38]; }  else { document.getElementById("D2Q").value = ""; }
+		if(textArray[39] != null) { document.getElementById("D2A").value = textArray[39]; }  else { document.getElementById("D2A").value = ""; }
+		if(textArray[40] != null) { document.getElementById("D3Q").value = textArray[40]; }  else { document.getElementById("D3Q").value = ""; }
+		if(textArray[41] != null) { document.getElementById("D3A").value = textArray[41]; }  else { document.getElementById("D3A").value = ""; }
+		if(textArray[42] != null) { document.getElementById("D4Q").value = textArray[42]; }  else { document.getElementById("D4Q").value = ""; }
+		if(textArray[43] != null) { document.getElementById("D4A").value = textArray[43]; }  else { document.getElementById("D4A").value = ""; }
+		if(textArray[44] != null) { document.getElementById("D5Q").value = textArray[44]; }  else { document.getElementById("D5Q").value = ""; }
+		if(textArray[45] != null) { document.getElementById("D5A").value = textArray[45]; }  else { document.getElementById("D5A").value = ""; }
+		if(textArray[46] != null) { document.getElementById("E1Q").value = textArray[46]; }  else { document.getElementById("E1Q").value = ""; }
+		if(textArray[47] != null) { document.getElementById("E1A").value = textArray[47]; }  else { document.getElementById("E1A").value = ""; }
+		if(textArray[48] != null) { document.getElementById("E2Q").value = textArray[48]; }  else { document.getElementById("E2Q").value = ""; }
+		if(textArray[49] != null) { document.getElementById("E2A").value = textArray[49]; }  else { document.getElementById("E2A").value = ""; }
+		if(textArray[50] != null) { document.getElementById("E3Q").value = textArray[50]; }  else { document.getElementById("E3Q").value = ""; }
+		if(textArray[51] != null) { document.getElementById("E3A").value = textArray[51]; }  else { document.getElementById("E3A").value = ""; }
+		if(textArray[52] != null) { document.getElementById("E4Q").value = textArray[52]; }  else { document.getElementById("E4Q").value = ""; }
+		if(textArray[53] != null) { document.getElementById("E4A").value = textArray[53]; }  else { document.getElementById("E4A").value = ""; }
+		if(textArray[54] != null) { document.getElementById("E5Q").value = textArray[54]; }  else { document.getElementById("E5Q").value = ""; }
+		if(textArray[55] != null) { document.getElementById("E5A").value = textArray[55]; }  else { document.getElementById("E5A").value = ""; }
+		if(textArray[56] != null) { document.getElementById("F1Q").value = textArray[56]; }  else { document.getElementById("F1Q").value = ""; }
+		if(textArray[57] != null) { document.getElementById("F1A").value = textArray[57]; }  else { document.getElementById("F1A").value = ""; }
+		if(textArray[58] != null) { document.getElementById("F2Q").value = textArray[58]; }  else { document.getElementById("F2Q").value = ""; }
+		if(textArray[59] != null) { document.getElementById("F2A").value = textArray[59]; }  else { document.getElementById("F2A").value = ""; }
+		if(textArray[60] != null) { document.getElementById("F3Q").value = textArray[60]; }  else { document.getElementById("F3Q").value = ""; }
+		if(textArray[61] != null) { document.getElementById("F3A").value = textArray[61]; }  else { document.getElementById("F3A").value = ""; }
+		if(textArray[62] != null) { document.getElementById("F4Q").value = textArray[62]; }  else { document.getElementById("F4Q").value = ""; }
+		if(textArray[63] != null) { document.getElementById("F4A").value = textArray[63]; }  else { document.getElementById("F4A").value = ""; }
+		if(textArray[64] != null) { document.getElementById("F5Q").value = textArray[64]; }  else { document.getElementById("F5Q").value = ""; }
+		if(textArray[65] != null) { document.getElementById("F5A").value = textArray[65]; }  else { document.getElementById("F5A").value = ""; }
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
+}
+
+function openFullScreen(gameName)
+{
+	document.getElementById('TRQABox').style.display = "block";
+
+	var elem = document.getElementById(gameName);
+
+	     if (elem.requestFullscreen)       { elem.requestFullscreen(); }
+	else if (elem.mozRequestFullscreen)    { elem.mozRequestFullscreen(); }
+	else if (elem.webkitRequestFullscreen) { elem.webkitRequestFullscreen(); }
+	else if (elem.msRequestFullscreen)     { elem.msRequestFullscreen(); }
+
+		setTimeout(function()
+		{
+			document.getElementById('TRQABox').style.display = "none";
+		}, 500);
+}
+
+/* FitText */
+(function(){
+
+  var addEvent = function (el, type, fn) {
+    if (el.addEventListener)
+      el.addEventListener(type, fn, false);
+		else
+			el.attachEvent('on'+type, fn);
+  };
+  
+  var extend = function(obj,ext){
+    for(var key in ext)
+      if(ext.hasOwnProperty(key))
+        obj[key] = ext[key];
+    return obj;
+  };
+
+  window.fitText = function (el, kompressor, options) {
+
+    var settings = extend({
+      'minFontSize' : -1/0,
+      'maxFontSize' : 1/0
+    },options);
+
+    var fit = function (el) {
+      var compressor = kompressor || 1;
+
+      var resizer = function () {
+        el.style.fontSize = Math.max(Math.min(el.clientWidth / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + 'px';
+      };
+
+      // Call once to set.
+      resizer();
+
+      // Bind events
+      // If you have any js library which support Events, replace this part
+      // and remove addEvent function (or use original jQuery version)
+      addEvent(window, 'resize', resizer);
+      addEvent(window, 'orientationchange', resizer);
+    };
+
+    if (el.length)
+      for(var i=0; i<el.length; i++)
+        fit(el[i]);
+    else
+      fit(el);
+
+    // return set of elements
+    return el;
+  };
+})();
+</script>
+	<script type="text/javascript">
+	  fitText(document.getElementById('A10'), .27);
+	  fitText(document.getElementById('A20'), .27);
+	  fitText(document.getElementById('A30'), .27);
+	  fitText(document.getElementById('A40'), .27);
+	  fitText(document.getElementById('A50'), .27);
+	  fitText(document.getElementById('B10'), .27);
+	  fitText(document.getElementById('B20'), .27);
+	  fitText(document.getElementById('B30'), .27);
+	  fitText(document.getElementById('B40'), .27);
+	  fitText(document.getElementById('B50'), .27);
+	  fitText(document.getElementById('C10'), .27);
+	  fitText(document.getElementById('C20'), .27);
+	  fitText(document.getElementById('C30'), .27);
+	  fitText(document.getElementById('C40'), .27);
+	  fitText(document.getElementById('C50'), .27);
+	  fitText(document.getElementById('D10'), .27);
+	  fitText(document.getElementById('D20'), .27);
+	  fitText(document.getElementById('D30'), .27);
+	  fitText(document.getElementById('D40'), .27);
+	  fitText(document.getElementById('D50'), .27);
+	  fitText(document.getElementById('E10'), .27);
+	  fitText(document.getElementById('E20'), .27);
+	  fitText(document.getElementById('E30'), .27);
+	  fitText(document.getElementById('E40'), .27);
+	  fitText(document.getElementById('E50'), .27);
+	  fitText(document.getElementById('F10'), .27);
+	  fitText(document.getElementById('F20'), .27);
+	  fitText(document.getElementById('F30'), .27);
+	  fitText(document.getElementById('F40'), .27);
+	  fitText(document.getElementById('F50'), .27);
+	  fitText(document.getElementById('SQs'), 2);
+	  fitText(document.getElementById('SAs'), 2);
+	</script>
+</body>
+</html>
